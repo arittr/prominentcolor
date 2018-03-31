@@ -139,9 +139,9 @@ func prepareImg(arguments int, bgmasks []ColorBackgroundMask, imageSize uint, or
 	if !IsBitSet(arguments, ArgumentNoCropping) {
 		// crop to remove 25% on all sides
 		croppedimg, err := cutter.Crop(orgimg, cutter.Config{
-			Width:  int(orgimg.Bounds().Dx() / 2),
-			Height: int(orgimg.Bounds().Dy() / 2),
-			Mode:   cutter.Centered,
+			Width: int(orgimg.Bounds().Dx() / 2),
+			// Height: int(orgimg.Bounds().Dy() / 2),
+			Mode: cutter.Centered,
 		})
 
 		if err != nil {
